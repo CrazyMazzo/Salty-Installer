@@ -68,3 +68,5 @@ echo "
         	command_name check_nrpe
         	command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
 	    }" >> /usr/local/nagios/etc/objects/commands.cfg
+
+
