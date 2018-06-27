@@ -28,9 +28,8 @@ sudo make install-webconf
 sudo a2enmod rewrite
 sudo a2enmod cgi
 
-sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
-password nagio123
 
+sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 
 
 sudo systemctl restart apache2.service
@@ -68,4 +67,4 @@ echo "
         define command	{
         	command_name check_nrpe
         	command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
-	}" >> /usr/local/nagios/etc/objects/commands.cfg
+	    }" >> /usr/local/nagios/etc/objects/commands.cfg
