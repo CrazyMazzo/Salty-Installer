@@ -2,8 +2,15 @@
 
 read -rp 'What is the name of the host: ' minion_name
 read -rp 'what is the ip address of the minion: ' ip_minion
-echo "
-define host {
+if [ -f /usr/local/nagios/etc/servers/$minion_name.cfg ]; then
+    read -rp 'File already exists, do you wish to replace it? (y,n)' bool
+    if [ $bool="y" ]; then
+        sudo rm /usr/local/nagios/etc/servers/$minion_name.cfg
+    else
+        exit
+    fi
+fi
+echo "define host {
         use                             linux-server
         host_name                       $minion_name
         alias                           minion1
