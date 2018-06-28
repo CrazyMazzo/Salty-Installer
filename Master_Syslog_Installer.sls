@@ -1,8 +1,8 @@
 Syslog_Installer_Master:
  pkg.installed:
-  - pkgs:
-   - syslog-ng-core
+ - pkgs:
    - syslog-ng
+   - syslog-ng-core
 
  copy config_file_master
   file.copy:
