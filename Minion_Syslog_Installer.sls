@@ -7,7 +7,7 @@ Syslog_Installer_Minion:
 copy sconfig_file_master:
  file.copy:
  - name: /etc/syslog-ng/syslog-ng.conf
- - source: /srv/salt/Minion/syslog-ng_server.conf
+ - source: /srv/salt/Minion/syslog-ng.conf
  - force: True
 
 replace config_Master_Ip:

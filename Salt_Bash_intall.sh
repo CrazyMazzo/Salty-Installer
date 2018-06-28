@@ -19,8 +19,9 @@ if [ "$installvar" = "Master" ]; then
         sudo rm /srv/salt/Master/*
         sudo rm /srv/salt/Minion/*
         sudo mv ~/Salty-Installer/*.sls /srv/salt/
-        sudo mv ~/Salty_Installer/Master/* /srv/salt/Master
-        sudo mv ~/Salty_Installer/Minion/* /srv/salt/Minion
+        sudo mv ~/Salty-Installer/Master/* /srv/salt/Master/
+        sudo mv ~/Salty-Installer/Minion/* /srv/salt/Minion/
+
 
 
         while [ $ready = "n" ]; do
@@ -40,8 +41,8 @@ elif [ "$installvar" = "Minion" ]; then
         sudo rm /srv/salt/*
         sudo rm /srv/salt/Master/*
         sudo rm /srv/salt/Minion/*
-        sudo mv ~/Salty_Installer/Master/* /srv/salt/Master
-        sudo mv ~/Salty_Installer/Minion/* /srv/salt/Minion
+        sudo mv ~/Salty-Installer/Master/* /srv/salt/Master
+        sudo mv ~/Salty-Installer/Minion/* /srv/salt/Minion
         sudo mv ~/Salty-Installer/*.sls /srv/salt/
 fi
 
