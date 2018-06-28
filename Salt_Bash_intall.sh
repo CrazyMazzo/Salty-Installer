@@ -16,8 +16,9 @@ while [ $while_working ]; do
             sudo mkdir /srv/salt
             sudo rm /srv/salt/*
             sudo mv ~/Salty-Installer/*.sls /srv/salt/
-
+            echo "hi"
             while [ $ready = "n" ]; do
+            echo "bye"
                 for n in {4..1}; do
                         echo $n/2 minutes left
                         sudo salt-key --accept-all -y
