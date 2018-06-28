@@ -1,12 +1,12 @@
 #!/bin/bash
 
 mstr_ipvar=$1
-while_done=false
+while_working=true
 ready="n"
 
 
 
-while [ !$while_done ]; do
+while [ $while_working ]; do
     read -rp 'What do you wish to install? (Master/Minion): ' installvar
     if [ "$installvar" = "Master" ]; then
             curl -L https://bootstrap.saltstack.com -o install_salt.sh
@@ -26,7 +26,7 @@ while [ !$while_done ]; do
                 sudo salt-key
                 read -rp 'Are the keys accepted? (y/n): ' ready
             done
-            while_done=true
+            while_working=false
 
     elif [ "$installvar" = "Minion" ]; then
             curl -L https://bootstrap.saltstack.com -o install_salt.sh
@@ -34,6 +34,6 @@ while [ !$while_done ]; do
             sudo mkdir /srv/salt
             sudo rm /srv/salt/*
             sudo mv ~/Salty-Installer/*.sls /srv/salt/
-            while_done=true
+            while_done=false
     fi
 done

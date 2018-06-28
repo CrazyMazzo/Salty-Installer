@@ -1,7 +1,7 @@
 run Minion_Nagios_Bash:
  cmd:
  - run
- - name: ~/Salty-Installer/Minion_Nagios_Bash.sh {{ grains['master'] }} {{ grains['ip_interfaces']['eth0'][0] }}
+ - name: ~/Salty-Installer/Minion_Nagios_Bash.sh
  
 replace master_ip
  file.replace:
@@ -14,4 +14,6 @@ replace minion_ip
   - name: /usr/local/nagios/etc/nrpe.cfg
   - pattern: server_address=127.0.0.1
   - repl: server_address={{ grains['ip_interfaces']['eth0'][0] }}
+
+
  

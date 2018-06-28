@@ -35,4 +35,4 @@ sudo make install-init
 #sudo sed -i -e "s%#server_address=127.0.0.1%server_address=$minion_ip%g" /usr/local/nagios/etc/nrpe.cfg
 sudo sed -i -e 's+command[check_hda1]=/usr/local/nagios/libexec/check_disk -w 20% -c 10% -p /dev/hda1+command[check_hda1]=/usr/local/nagios/libexec/check_disk -w 20% -c 10% -p /dev/sda1+g' /usr/local/nagios/etc/nrpe.cfg
 
-sudo systemctl restart nrpe.service
+

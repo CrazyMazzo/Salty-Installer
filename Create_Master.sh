@@ -7,7 +7,6 @@ sudo ./Salt_Bash_intall $mstr_ip
 
 sudo chmod 755 Nagios_install_bash.sh
 sudo ./Nagios_install_bash.sh
-sudo salt "58-UBU1604-SaltMaster" state.apply Minion_Nagios_Bash.sls
 
 read -rp 'Is the Minion ready? (y/n): ' ready
 
@@ -22,6 +21,9 @@ read -rp 'What is the IP of the desired Minion: ' minion_ip
 
 sudo chmod 755 Adding_Nagios_server.sh
 sudo chmod 755 Add_Commands.sh
+
+sudo salt "58-UBU1604-SaltMaster" state.apply -t 60 Master_Syslog_Installer
+sudo salt "58-UBU1604-SaltMaster" cmd.run 'sudo systemctl restart syslog-ng'
 
 sudo ./Add_Commands.sh $minion_name $minion_ip
 
