@@ -3,7 +3,7 @@
 mstr_ip="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
 
 sudo chmod 755 ~/Salty-Installer/Salt_Bash_intall.sh
-sudo ~/Salty-Installer/Salt_Bash_intall $mstr_ip
+sudo ~/Salty-Installer/Salt_Bash_intall.sh $mstr_ip
 
 sudo chmod 755 ~/Salty-Installer/Nagios_install_bash.sh
 sudo ~/Salty-Installer/Nagios_install_bash.sh
