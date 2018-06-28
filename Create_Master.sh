@@ -8,6 +8,10 @@ sudo ~/Salty-Installer/Salt_Bash_intall.sh $mstr_ip
 sudo chmod 755 ~/Salty-Installer/Nagios_install_bash.sh
 sudo ~/Salty-Installer/Nagios_install_bash.sh
 
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+
 read -rp 'Is the Minion ready? (y/n): ' ready
 
 while [ $ready = "n" ]; do
@@ -18,9 +22,7 @@ done
 read -rp 'What is the Name of the desired Minion: ' minion_name
 read -rp 'What is the IP of the desired Minion: ' minion_ip
 
-sudo apt install docker.io -y
-sudo systemctl start docker
-sudo systemctl enable docker
+
 
 sudo chmod 755 ~/Salty-Installer/Adding_Nagios_server.sh
 sudo chmod 755 ~/Salty-Installer/Add_Commands.sh
