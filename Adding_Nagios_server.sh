@@ -36,3 +36,5 @@ define service {
         service_description             /dev/vda1 free space
         check_command                   check_nrpe!check_vda1
 }" >> /usr/local/nagios/etc/servers/$minion_name.cfg
+
+echo "Added /usr/local/nagios/etc/servers/$minion_name.cfg"
