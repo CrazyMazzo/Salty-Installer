@@ -13,7 +13,11 @@ if [ "$installvar" = "Master" ]; then
         sudo sh install_salt.sh -U -A "$mstr_ipvar"
 
         sudo mkdir /srv/salt
+        sudo mkdir /srv/salt/Master
+        sudo mkdir /srv/salt/Minion
         sudo rm /srv/salt/*
+        sudo rm /srv/salt/Master/*
+        sudo rm /srv/salt/Minion/*
         sudo mv ~/Salty-Installer/*.sls /srv/salt/
         sudo mv ~/Salty_Installer/Master/* /srv/salt/Master
         sudo mv ~/Salty_Installer/Minion/* /srv/salt/Minion
@@ -31,7 +35,11 @@ elif [ "$installvar" = "Minion" ]; then
         curl -L https://bootstrap.saltstack.com -o install_salt.sh
         sudo sh install_salt.sh -U -A "$mstr_ipvar"
         sudo mkdir /srv/salt
+        sudo mkdir /srv/salt/Master
+        sudo mkdir /srv/salt/Minion
         sudo rm /srv/salt/*
+        sudo rm /srv/salt/Master/*
+        sudo rm /srv/salt/Minion/*
         sudo mv ~/Salty_Installer/Master/* /srv/salt/Master
         sudo mv ~/Salty_Installer/Minion/* /srv/salt/Minion
         sudo mv ~/Salty-Installer/*.sls /srv/salt/
