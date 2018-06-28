@@ -1,7 +1,11 @@
 #!/bin/bash
 
-read -rp 'What is the name of the host: ' minion_name
-read -rp 'what is the ip address of the minion: ' ip_minion
+minion_name=$1
+ip_minion=$2
+
+#read -rp 'What is the name of the host: ' minion_name
+#read -rp 'what is the ip address of the minion: ' ip_minion
+
 if [ -f /usr/local/nagios/etc/servers/$minion_name.cfg ]; then
     read -rp 'File already exists, do you wish to replace it? (y,n)' bool
     if [ $bool="y" ]; then
@@ -14,7 +18,7 @@ fi
 echo "define host {
         use                             linux-server
         host_name                       $minion_name
-        alias                           minion1
+        alias                           $minion_name
         address                         $ip_minion
         max_check_attempts              5
         check_period                    24x7

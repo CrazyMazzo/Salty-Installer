@@ -29,7 +29,7 @@ sudo a2enmod rewrite
 sudo a2enmod cgi
 
 
-sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+sudo htpasswd -c -b /usr/local/nagios/etc/htpasswd.users nagiosadmin nagios123
 
 
 sudo systemctl restart apache2.service
@@ -69,4 +69,4 @@ define command	{
     command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
 }' >> /usr/local/nagios/etc/objects/commands.cfg
 
-
+sudo systemctl restart nagios
