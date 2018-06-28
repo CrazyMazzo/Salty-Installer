@@ -20,11 +20,10 @@ while [ $while_working ]; do
             echo "hi"
             while [ $ready = "n" ]; do
             echo "bye"
-                for n in {4..1}; do
-                        echo $n/2 minutes left
-                        sudo salt-key --accept-all -y
-                        sleep 30
-                done
+                echo $n/2 minutes left
+                sudo salt-key --accept-all -y
+                sleep 30
+
                 sudo salt-key
                 read -rp 'Are the keys accepted? (y/n): ' ready
             done
@@ -36,7 +35,7 @@ while [ $while_working ]; do
             sudo mkdir /srv/salt
             sudo rm /srv/salt/*
             sudo mv ~/Salty-Installer/*.sls /srv/salt/
-            while_done=false
+            while_working=false
     fi
 done
 
