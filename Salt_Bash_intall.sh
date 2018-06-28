@@ -11,6 +11,7 @@ while [ $while_working ]; do
     if [ "$installvar" = "Master" ]; then
             curl -L https://bootstrap.saltstack.com -o install_salt.sh
             sudo sh install_salt.sh -M -U -A "$mstr_ipvar"
+            echo "Install Minion"
             sudo sh install_salt.sh -U -A "$mstr_ipvar"
 
             sudo mkdir /srv/salt
