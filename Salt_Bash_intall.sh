@@ -28,7 +28,7 @@ while [ !$while_done ]; do
             sudo sh install_salt.sh -U -A "$mstr_ipvar"
             sudo mkdir /srv/salt
             sudo rm /srv/salt/*
-            sudo mv /Salty-Installer/*.sls /srv/salt
+            sudo mv ~/Salty-Installer/*.sls /srv/salt/
             while_done=true
     fi
 done

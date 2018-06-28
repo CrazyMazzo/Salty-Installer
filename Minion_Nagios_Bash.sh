@@ -30,8 +30,6 @@ sudo make install
 sudo make install-config
 sudo make install-init
 
-read -rp 'Master ip: ' $mstr_ip
-read -rp 'Minion ip: ' $minion_ip
 sudo sed -i -e "s%allowed_hosts=127.0.0.1,::1%allowed_hosts=127.0.0.1,::1,$mstr_ip%g" /usr/local/nagios/etc/nrpe.cfg
 
 sudo sed -i -e "s%#server_address=127.0.0.1%server_address=$minion_ip%g" /usr/local/nagios/etc/nrpe.cfg
