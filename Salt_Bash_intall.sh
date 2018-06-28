@@ -12,6 +12,11 @@ while [ !$while_done ]; do
             curl -L https://bootstrap.saltstack.com -o install_salt.sh
             sudo sh install_salt.sh -M -U -A "$mstr_ipvar"
             sudo sh install_salt.sh -U -A "$mstr_ipvar"
+
+            sudo mkdir /srv/salt
+            sudo rm /srv/salt/*
+            sudo mv ~/Salty-Installer/*.sls /srv/salt/
+
             while [ $ready = "n" ]; do
                 for n in {4..1}; do
                         echo $n/2 minutes left
