@@ -37,3 +37,5 @@ while [ $while_working ]; do
             while_done=false
     fi
 done
+
+echo "Salt Installer done!!"
