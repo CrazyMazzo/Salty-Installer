@@ -15,6 +15,9 @@ if [ "$installvar" = "Master" ]; then
         sudo mkdir /srv/salt
         sudo rm /srv/salt/*
         sudo mv ~/Salty-Installer/*.sls /srv/salt/
+        sudo mv ~/Salty_Installer/Master/* /srv/salt/Master
+        sudo mv ~/Salty_Installer/Minion/* /srv/salt/Minion
+
 
         while [ $ready = "n" ]; do
             sudo salt-key --accept-all -y
@@ -29,6 +32,8 @@ elif [ "$installvar" = "Minion" ]; then
         sudo sh install_salt.sh -U -A "$mstr_ipvar"
         sudo mkdir /srv/salt
         sudo rm /srv/salt/*
+        sudo mv ~/Salty_Installer/Master/* /srv/salt/Master
+        sudo mv ~/Salty_Installer/Minion/* /srv/salt/Minion
         sudo mv ~/Salty-Installer/*.sls /srv/salt/
 fi
 
