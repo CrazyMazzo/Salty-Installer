@@ -5,6 +5,7 @@ read -rp 'what is the ip address of the minion: ' ip_minion
 if [ -f /usr/local/nagios/etc/servers/$minion_name.cfg ]; then
     read -rp 'File already exists, do you wish to replace it? (y,n)' bool
     if [ $bool="y" ]; then
+        echo Replacing file
         sudo rm /usr/local/nagios/etc/servers/$minion_name.cfg
     else
         exit

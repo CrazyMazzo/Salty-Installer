@@ -62,11 +62,11 @@ sudo sed -i -e 's%#cfg_dir=/usr/local/nagios/etc/servers%cfg_dir=/usr/local/nagi
 
 sudo mkdir /usr/local/nagios/etc/servers
 
-echo "
+echo '
 
-        define command	{
-        	command_name check_nrpe
-        	command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
-	    }" >> /usr/local/nagios/etc/objects/commands.cfg
+define command	{
+    command_name check_nrpe
+    command_line $USER1$/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
+}' >> /usr/local/nagios/etc/objects/commands.cfg
 
 
