@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mstr_ipvar=$1
-while_working= true
+while_working=true
 ready="n"
 
 
@@ -27,7 +27,7 @@ while [ $while_working ]; do
                 sudo salt-key
                 read -rp 'Are the keys accepted? (y/n): ' ready
             done
-            while_working= false
+            while_working=false
 
     elif [ "$installvar" = "Minion" ]; then
             curl -L https://bootstrap.saltstack.com -o install_salt.sh
