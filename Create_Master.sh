@@ -31,7 +31,7 @@ sudo chmod 755 ~/Salty-Installer/Add_Commands.sh
 sudo salt "58-UBU1604-SaltMaster" state.apply -t 60 Master_Syslog_Installer
 sudo salt "58-UBU1604-SaltMaster" cmd.run 'sudo systemctl restart syslog-ng'
 
-sudo salt "58-UBU1604-SaltMinion*" state.apply -t 60 Master_Syslog_Installer
+sudo salt "58-UBU1604-SaltMinion*" state.apply -t 60 Minion_Syslog_Installer
 sudo salt "58-UBU1604-SaltMinion*" cmd.run 'sudo systemctl restart syslog-ng'
 
 sudo ~/Salty-Installer/Add_Commands.sh $minion_name $minion_ip
