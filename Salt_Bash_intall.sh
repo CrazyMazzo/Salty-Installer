@@ -3,15 +3,6 @@
 mstr_ipvar=$1
 ready="n"
 
-
-
-
-read -rp 'What do you wish to install? (Master/Minion): ' installvar
-if [ "$installvar" = "Master" ]; then
-        curl -L https://bootstrap.saltstack.com -o install_salt.sh
-        sudo sh install_salt.sh -M -U -A "$mstr_ipvar"
-        sudo sh install_salt.sh -U -A "$mstr_ipvar"
-
         sudo mkdir /srv/salt
         sudo mkdir /srv/salt/Master
         sudo mkdir /srv/salt/Minion
@@ -21,6 +12,15 @@ if [ "$installvar" = "Master" ]; then
         sudo mv ~/Salty-Installer/*.sls /srv/salt/
         sudo mv ~/Salty-Installer/Master/* /srv/salt/Master/
         sudo mv ~/Salty-Installer/Minion/* /srv/salt/Minion/
+
+
+read -rp 'What do you wish to install? (Master/Minion): ' installvar
+if [ "$installvar" = "Master" ]; then
+        curl -L https://bootstrap.saltstack.com -o install_salt.sh
+        sudo sh install_salt.sh -M -U -A "$mstr_ipvar"
+        sudo sh install_salt.sh -U -A "$mstr_ipvar"
+
+
         
         sudo systemctl restart salt-minion
 
