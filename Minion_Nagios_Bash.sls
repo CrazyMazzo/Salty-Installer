@@ -3,13 +3,13 @@ run Minion_Nagios_Bash:
  - run
  - name: ~/Salty-Installer/Minion_Nagios_Bash.sh
  
-replace master_ip
+replace master_ip:
  file.replace:
   - name: /usr/local/nagios/etc/nrpe.cfg
   - pattern: allowed_hosts=127.0.0.1,::1
   - repl: allowed_hosts=127.0.0.1,::1,{{ grains['master'] }}
 
-replace minion_ip
+replace minion_ip:
  file.replace:
   - name: /usr/local/nagios/etc/nrpe.cfg
   - pattern: server_address=127.0.0.1
