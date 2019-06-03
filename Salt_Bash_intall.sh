@@ -9,9 +9,9 @@ sudo mkdir /srv/salt/Minion
         sudo rm /srv/salt/*
         sudo rm /srv/salt/Master/*
         sudo rm /srv/salt/Minion/*
-        sudo mv ~/Salty-Installer/*.sls /srv/salt/
-        sudo mv ~/Salty-Installer/Master/* /srv/salt/Master/
-        sudo mv ~/Salty-Installer/Minion/* /srv/salt/Minion/
+        sudo cp ~/Salty-Installer/*.sls /srv/salt/
+        sudo cp ~/Salty-Installer/Master/* /srv/salt/Master/
+        sudo cp ~/Salty-Installer/Minion/* /srv/salt/Minion/
 
 
 read -rp 'What do you wish to install? (Master/Minion): ' installvar
