@@ -12,7 +12,7 @@ cd ~
 curl -L -O http://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz
 tar zxf nagios-plugins-*.tar.gz
 
-cd nagios-plugins-*
+cd nagios-plugins-2.2.1
 ./configure --with-nagios-user=nagios --with-nagios-group=nagios --with-openssl
 
 make
@@ -22,7 +22,7 @@ cd ~
 curl -L -O https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-3.2.1/nrpe-3.2.1.tar.gz
 tar zxf nrpe-*.tar.gz
 
-cd nrpe-*
+cd nrpe-3.2.1
 ./configure --enable-command-args --with-nagios-user=nagios --with-nagios-group=nagios --with-ssl=/usr/bin/openssl --with-ssl-lib=/usr/lib/x86_64-linux-gnu
 
 make all
