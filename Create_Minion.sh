@@ -14,7 +14,5 @@ sudo ~/Salty-Installer/Salt_Bash_intall.sh $mstr_ip
 
 sudo chmod 755 ~/Salty-Installer/Minion_Nagios_Bash.sh
 
-echo hey
-
-sudo cd ~/Salty-Installer
+cd ~/Salty-Installer
 sudo cp Minion_Nagios_Bash.sh /srv/scripts
