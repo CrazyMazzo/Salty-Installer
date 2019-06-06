@@ -6,7 +6,8 @@ minion_ip=$2
 sudo adduser nagios
 
 sudo apt-get update
-sudo apt-get install build-essential libgd2-xpm-dev openssl libssl-dev unzip
+#sudo apt-get install build-essential libgd2-xpm-dev openssl libssl-dev unzip
+sudo apt-get install -y autoconf gcc libc6 libmcrypt-dev make libssl-dev wget bc gawk dc build-essential snmp libnet-snmp-perl gettext
 
 cd ~
 curl -L -O http://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz
