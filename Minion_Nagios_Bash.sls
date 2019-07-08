@@ -9,6 +9,12 @@ replace minion_ip:
   - name: /usr/local/nagios/etc/nrpe.cfg
   - pattern: server_address=127.0.0.1
   - repl: server_address={{ grains['ip_interfaces']['eth0'][0] }}
+  
+replace disk:
+ file.replace:
+ - name: /usr/local/nagios/etc/nrpe.cfg
+ - pattern: /dev/hda1
+ - repl: /dev/sda1
 
 
  
